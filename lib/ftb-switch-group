@@ -16,8 +16,9 @@ else
   local -Ua total=(${(M)${list:$header_lines}#$'\x1b['[0-9;]#*m})
 fi
 
-# get current group index, start from 2
-local current=2
+
+# get current group index, start from 1
+local current=1
 if [[ -f $tmp_dir/current-group.$pid ]]; then
   current=$(( $(<$tmp_dir/current-group.$pid) + offset ))
 fi
